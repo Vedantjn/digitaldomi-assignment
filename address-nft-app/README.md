@@ -1,0 +1,9 @@
+src/
+  components/
+    AddressInput.js
+    Map.js
+    NFTGenerator.js
+  styles/
+    GlobalStyles.js
+  App.js
+  index.js
