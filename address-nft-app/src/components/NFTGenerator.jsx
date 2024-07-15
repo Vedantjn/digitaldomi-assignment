@@ -9,8 +9,8 @@ const NFTGeneratorWrapper = styled(motion.div)`
 `;
 
 const GenerateButton = styled(motion.button)`
-  background-color: ${props => props.theme.button};
-  color: ${props => props.theme.buttonText};
+  background-color: ${props => props.theme.accent};
+  color: #000000;
   border: none;
   padding: 12px 24px;
   font-size: 16px;
