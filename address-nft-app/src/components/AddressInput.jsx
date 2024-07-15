@@ -5,7 +5,7 @@ import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
-mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
+mapboxgl.accessToken = 'pk.eyJ1IjoidmVkYW50am43IiwiYSI6ImNreTlsaHVkYTA3aTEyeHBkYmo2N2o3NGwifQ.xJyZ3madB0y9BABOSacbxA';
 
 const AddressInputWrapper = styled(motion.div)`
   width: 100%;
