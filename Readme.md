@@ -36,9 +36,9 @@ This project is an Address NFT Generator that allows users to input an address, 
 2. Ensure you have Node.js installed (version 14 or higher recommended).
 3. Run `npm install` to install dependencies.
 4. Create a `.env` file in the root directory and add your Mapbox API key:
-    INFURA_PROJECT_ID=
-    PRIVATE_KEY=
-    REACT_APP_MAPBOX_ACCESS_TOKEN=
+    - INFURA_PROJECT_ID=
+    - PRIVATE_KEY=
+    - REACT_APP_MAPBOX_ACCESS_TOKEN=
 5. Run `npm start` to start the development server.
 6. Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
 
