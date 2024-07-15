@@ -10,19 +10,19 @@ You can view the live application here: [Address NFT Generator](https://digitald
 
 Here are some screenshots of the application:
 
-![Home Page](./public/screenshot1.png)
+![Home Page](.//address-nft-app/public/screenshot1.png)
 *Home page of the Address NFT Generator*
 
-![Map View](./public/screenshot2.png)
+![Map View](.//address-nft-app/public/screenshot2.png)
 *Map view after entering an address*
 
-![Metamask Transaction](./public/screenshot3.png)
+![Metamask Transaction](.//address-nft-app/public/screenshot3.png)
 *Metamask Transaction*
 
-![NFT Generation](./public/screenshot4.png)
+![NFT Generation](.//address-nft-app/public/screenshot4.png)
 *NFT generation process*
 
-![Etherscan](./public/screenshot5.png)
+![Etherscan](.//address-nft-app/public/screenshot5.png)
 *Etherscan*
 
 
