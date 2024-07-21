@@ -4,8 +4,7 @@ import { motion } from 'framer-motion';
 import AddressInput from './components/AddressInput';
 import Map from './components/Map';
 import NFTGenerator from './components/NFTGenerator';
-import GlobalStyles from './styles/GlobalStyles';
-import { darkTheme } from './styles/Theme';
+import GlobalStyles, {darkTheme} from './styles/GlobalStyles';
 
 const AppWrapper = styled.div`
   max-width: 800px;
