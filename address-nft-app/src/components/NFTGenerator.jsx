@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ethers } from 'ethers';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import addressNFTABI from '../AddressNFTABI.json'; // Updated import path
 
 const NFTGeneratorWrapper = styled(motion.div)`
   margin-top: 20px;
@@ -85,12 +86,6 @@ const EtherscanLink = styled.a`
   }
 `;
 
-const contractABI = [
-  "function mintNFT(address recipient, string memory addressText, int256 lat, int256 lon) public returns (uint256)",
-  "function getAddressData(uint256 tokenId) public view returns (string memory, int256, int256)",
-  "event Transfer(address indexed from, address indexed to, uint256 indexed tokenId)"
-];
-
 const contractAddress = "0x7e9A88b3CD623460BFB0B5a42D872e17FB196D1F";
 
 const NFTGenerator = ({ selected }) => {
@@ -102,27 +97,27 @@ const NFTGenerator = ({ selected }) => {
       alert('Please select an address first');
       return;
     }
-  
+
     setIsLoading(true);
-  
+
     try {
       if (typeof window.ethereum !== 'undefined') {
         await window.ethereum.request({ method: 'eth_requestAccounts' });
         const provider = new ethers.providers.Web3Provider(window.ethereum);
-        
+
         const network = await provider.getNetwork();
-        if (network.chainId !== 11155111) {
+        if (network.chainId !== 11155111) { // Sepolia network chainId
           alert('Please connect to the Sepolia network in MetaMask');
           setIsLoading(false);
           return;
         }
 
         const signer = provider.getSigner();
-        const contract = new ethers.Contract(contractAddress, contractABI, signer);
-  
+        const contract = new ethers.Contract(contractAddress, addressNFTABI.abi, signer); // Use ABI from JSON
+
         const latInt = Math.floor(selected.lat * 1e6);
         const lonInt = Math.floor(selected.lng * 1e6);
-  
+
         const transaction = await contract.mintNFT(await signer.getAddress(), selected.address, latInt, lonInt);
         const receipt = await transaction.wait();
 
@@ -148,15 +143,6 @@ const NFTGenerator = ({ selected }) => {
       }
     } catch (error) {
       console.error('Error generating NFT:', error);
-      if (error.reason) {
-        console.error('Error reason:', error.reason);
-      }
-      if (error.code) {
-        console.error('Error code:', error.code);
-      }
-      if (error.transaction) {
-        console.error('Error transaction:', error.transaction);
-      }
       alert('Error generating NFT. Please check the console for more details.');
     } finally {
       setIsLoading(false);

@@ -32,20 +32,20 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .mapboxgl-ctrl-geocoder--input {
-    color: white !important; // Changed to white
+    color: white !important;
   }
 
   .mapboxgl-ctrl-geocoder--suggestion {
-    color: black !important; // Changed to black
-    background-color: white !important; // Changed to white
+    color: black !important; 
+    background-color: white !important; 
   }
 
   .mapboxgl-ctrl-geocoder--suggestion-title {
-    color: black !important; // Ensure title is also black
+    color: black !important;
   }
 
   .mapboxgl-ctrl-geocoder--suggestion-address {
-    color: black !important; // Ensure address is also black
+    color: black !important;
   }
 
   .mapboxgl-canvas {
